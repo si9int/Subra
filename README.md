@@ -6,6 +6,7 @@ A Web-UI for subdomain enumeration (subfinder)
 ---
 
 **Requirements**
+- https://github.com/projectdiscovery/subfinder
 - Python3
 - Flask
 - Write permissions on `./tmp`

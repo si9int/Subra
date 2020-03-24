@@ -1,0 +1,40 @@
+{% extends 'global/layout.html' %}
+{% block main %}
+<div class="content">
+	<div class="level">
+		<div class="level-left">
+			<a class="button level-item" href="/new">New Scan</a>
+			<a class="button level-item" href="/options">
+				<span class="material-icons">settings</span>
+			</a>
+		</div>
+		{% if idle %}
+		<div class="level-right">
+			 <button class="button is-warning is-light">
+			 	<u>Scanning</u>&nbsp;
+			 	{{ ','.join(idle) }}
+			 </button>
+		</div>
+		{% endif %}
+	</div><hr>
+	<h3>Results</h3>
+	<div class="box">
+		<table class="table">
+			<tr>
+				<th>Domain</th>
+			{% for scan in scans %}
+			<tr>	
+				<td>
+					<a href="/result/{{ scan }}">{{ scan }}</a>
+					<div class="is-pulled-right">
+						<a href="/remove/{{ scan }}" style="color: #000;" onclick="return confirm('Sure?');" title="Remove">
+							<span class="material-icons">delete_outline</span>
+						</a>
+					</div>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

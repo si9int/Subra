@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Subra | {{ title }}</title>
+	<link rel="stylesheet" href="/static/bulma.min.css">
+	<link rel="stylesheet" href="/static/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar has-shadow is-dark" role="navigation">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item" href="/" title="Return to overview ..">
+						<strong>$ Subra</strong>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+		{% block main %}{% endblock %}
+		</div>
+	</main>
+<footer class="footer">
+  	<div class="content has-text-centered">
+    	<p>
+    		v.0.1 | <b>Made by</b>
+    		<a href="https://twitter.com/si9int" target="_blank">@SI9INT</a>
+    	</p>
+  	</div>
+</footer>
+</body>
+</html>

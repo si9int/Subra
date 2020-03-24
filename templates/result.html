@@ -1,0 +1,34 @@
+{% extends 'global/layout.html' %}
+{% block main %}
+<div class="content">
+	<div class="level">
+		<div class="level-left">
+			<a class="button level-item" href="/new">New Scan</a>
+			<a class="button level-item" href="/options">
+				<span class="material-icons">settings</span>
+			</a>
+			<a class="button level-item" href="/export/{{ title.split(': ')[1] }}/sub">Subdomains as .txt</a>
+			<a class="button level-item" href="/export/{{ title.split(': ')[1] }}/ip">IP Addresses as .txt</a>
+		</div>
+	</div><hr>
+	<h3>{{ title.split(': ')[1] }}</h3>
+	<div class="box">
+		<table class="table">
+			<tr>
+				<th>Subdomain</th>
+				<th>IP Address</th>
+			</tr>
+			{% for r in result %}
+			<tr>
+				<td>
+					<a href="https://{{ r[0] }}" target="_blank">{{ r[0] }}</a>
+				</td>
+				<td>
+					<a href="https://api.iptoasn.com/v1/as/ip/{{ r[1] }}" target="_blank">{{ r[1] }}</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

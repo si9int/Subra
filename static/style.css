@@ -1,0 +1,30 @@
+main {
+	padding: 3rem;
+}
+
+h3 {
+	margin: 1.1428em 0 !important;
+	text-align: center;
+}
+
+textarea {
+	min-height: 400px !important;
+}
+
+footer {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 30;
+	padding: 2rem 1.5rem 2rem !important;
+}
+
+.material-icons {
+	font-size: 18px !important;
+}
+
+.box {
+	box-shadow: none !important;
+	border: 2px solid #eee;
+}

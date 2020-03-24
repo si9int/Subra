@@ -1,0 +1,65 @@
+{% extends 'global/layout.html' %}
+{% block main %}
+<div class="content">
+	<div class="level">
+		<div class="level-left">
+			<a class="button level-item" href="/new" disabled>New Scan</a>
+			<a class="button level-item" href="/options">
+				<span class="material-icons">settings</span>
+			</a>
+		</div>
+	</div><hr>
+	<h3>New Scan</h3>
+	<div class="box">
+		<div class="columns">
+			<div class="column">
+				<form method="post">
+					<div class="field">
+						<label class="label">Domain</label>
+						<div class="control">
+							<input name="domain" class="input" type="text" placeholder="Domain .." required>
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">Arguments</label>
+						<div class="control">
+							<input name="args" class="input" type="text" placeholder="-t 100 ..">
+							<p class="help">You can choose optional arguments from the right</p>
+						</div>
+					</div>
+					<div class="field">
+						<div class="control">
+							<button class="button" type="submit">Schedule</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="column">
+				<div class="content">
+					<b>Possible Arguments</b>
+					<table>
+						<tr>
+							<td>
+								<code>-r 1.1.1.1</code>
+							</td>
+							<td>Comma-separated list of resolvers to use</td>
+						</tr>
+						<tr>
+							<td>
+								<code>-t 100</code>
+							</td>
+							<td>Number of concurrent goroutines for resolving (default 10)</td>
+						</tr>
+						<tr>
+							<td>
+								<code>-sources censys</code>
+							</td>
+							<td>Comma separated list of sources to use</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

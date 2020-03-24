@@ -1,0 +1,37 @@
+{% extends 'global/layout.html' %}
+{% block main %}
+<div class="content">
+	<div class="level">
+		<div class="level-left">
+			<a class="button level-item" href="/new">New Scan</a>
+			<a class="button level-item" href="/options" disabled>
+				<span class="material-icons">settings</span>
+			</a>
+		</div>
+	</div><hr>
+	<h3>Options</h3>
+	<div class="box">
+		<div class="columns">
+			<div class="column">
+				<form method="post">
+					<div class="field">
+						<label class="label">Configuration</label>
+						<div class="control">
+							<textarea name="config" class="textarea" placeholder="Textarea">{{ config[1] }}</textarea>
+							<p class="help">
+								This file is located under
+								<code>{{ config[0]+ '/.config/subfinder/config.yaml' }}</code>
+							</p>
+						</div>
+					</div>
+					<div class="field">
+						<div class="control">
+							<button class="button" type="submit">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
